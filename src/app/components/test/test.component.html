@@ -1,0 +1,24 @@
+<div *ngIf="show">
+  <div>
+    Question: {{question}}
+    <br>
+    <br>
+    <div *ngFor="let option of options">
+      <input type="radio" (click)="answer(option)" name="answer" value="{{option}}"> {{option}}
+      <br>
+      <br>
+    </div>
+    <div align="center">
+      <button (click)="getPrevQuestion()">Previous</button>
+      <button (click)="getNextQuestion()">Next</button>
+      <br>
+      <br>
+    </div>
+  </div>
+  <div align="center">
+    <button (click)="result()">Submit</button>
+  </div>
+</div>
+<div *ngIf="!show">
+  Right Answer is {{rightAns}} out of 3 questions.
+</div>
